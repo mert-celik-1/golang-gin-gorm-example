@@ -34,7 +34,7 @@ func InitialMigration(db *gorm.DB) {
 
 func Connect() {
 
-	d, err := gorm.Open(mysql.Open(""), &gorm.Config{})
+	d, err := gorm.Open(mysql.Open("root:root123@tcp(localhost:3306)/test?parseTime_true"), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}

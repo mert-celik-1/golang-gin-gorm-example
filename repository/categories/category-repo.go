@@ -19,7 +19,7 @@ func (c *CategoryRepository) GetAll() ([]models.Category, error) {
 
 	categories := []models.Category{}
 
-	if err := c.db.Where("is_deleted", "0").Find(&categories).Error; err != nil {
+	if err := c.db.Find(&categories).Error; err != nil {
 		return categories, errors.New("Failed get data")
 	}
 

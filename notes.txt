@@ -1,0 +1,9 @@
+docker container run --name go-mysql --detach --publish 3306:3306 -e MYSQL_ROOT_PASSWORD=root123 mysql;    
+
+docker exec -it your-mysql-container-name mysql -u root -p
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password'
+
+mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'db-tool-password'
+
+mysql> FLUSH PRIVILEGES;
